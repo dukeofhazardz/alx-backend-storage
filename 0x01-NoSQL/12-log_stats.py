@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""NoSQL with pymongo"""
 from pymongo import MongoClient
 """ Python script that provides some stats about
     Nginx logs stored in MongoDB """
