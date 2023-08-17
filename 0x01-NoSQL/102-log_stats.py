@@ -15,7 +15,7 @@ if __name__ == "__main__":
     methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
     for method in methods:
         count = nginx_logs.count_documents({"method": method})
-        print("\tmethod {}: {}".format(method, count))
+        print("    method {}: {}".format(method, count))
 
     status_check = nginx_logs.count_documents({"method": "GET",
                                                "path": "/status"})
@@ -24,4 +24,4 @@ if __name__ == "__main__":
     print("IPs:")
     all_ips = Counter(log["ip"] for log in nginx_logs.find())
     for ip, count in all_ips.most_common(10):
-        print(f"\t{ip}: {count}")
+        print(f"    {ip}: {count}")
